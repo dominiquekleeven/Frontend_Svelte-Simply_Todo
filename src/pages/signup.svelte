@@ -55,10 +55,13 @@
         cursor: pointer;
     }
 
-    main {
+    .signup {
+        
         display: flex;
         flex-direction: column !important;
+        justify-content: center;
         align-items: center;
+        height: 100%;  
     }
 
     .error {
@@ -70,7 +73,7 @@
 
     @media (max-width: 700px) {
         .login-form {
-            min-width: 75vw !important;
+            max-width: 80vw !important;
         }
     }
 
@@ -116,7 +119,7 @@
     }
 </style>
 
-<main>
+<main class="signup">
     <form on:submit={handleSubmit} class="login-form">
         <h1>Sign up</h1>
 

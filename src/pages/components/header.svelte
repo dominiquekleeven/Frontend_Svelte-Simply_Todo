@@ -21,6 +21,13 @@
         margin: 0 auto;
     }
 
+    @media (max-width: 700px) {
+        h1 {
+            margin-top: 70px;
+            font-size: 3em !important;
+        }
+    }
+
     h1 {
         color: rgb(155, 37, 102);
         text-transform: uppercase;

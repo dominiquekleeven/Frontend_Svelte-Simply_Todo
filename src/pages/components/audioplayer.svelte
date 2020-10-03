@@ -20,6 +20,14 @@
 </script>
 
 <style>
+
+@media (max-width: 700px) {
+        article {
+            display: none;
+        }
+    }
+
+
     article {
         margin: 0 0 1em 0;
         max-width: 800px;
@@ -44,6 +52,13 @@
         border-radius: 0.25em;
     }
 
+    .audioplayer {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+    }
+
 
     .playing {
         color: rgb(155, 37, 102);
@@ -54,5 +69,7 @@
     <h2>{title}</h2>
     <p><strong>{composer}</strong> / performed by {performer}</p>
     <!-- svelte-ignore a11y-media-has-caption -->
-    <audio bind:this={audio} bind:paused controls {src} />
+    <span class="audioplayer">    
+        <audio bind:this={audio} bind:paused controls {src} /></span>
+
 </article>

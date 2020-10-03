@@ -1,6 +1,7 @@
 <script>
     import Todolist from "./components/todolist.svelte";
     import AudioPlayer from "./components/audioplayer.svelte"
+    import Header from "./components/header.svelte";
 </script>
 
 <style>
@@ -12,6 +13,8 @@
 </style>
 
 <main>
+    <Header />
+
     <AudioPlayer
 	src="https://sveltejs.github.io/assets/music/satie.mp3"
 	title="Gymnopédie no. 1"

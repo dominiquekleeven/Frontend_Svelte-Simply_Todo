@@ -46,7 +46,9 @@
     main {
         display: flex;
         flex-direction: column !important;
+        justify-content: center;
         align-items: center;
+        height: 100%;  
     }
 
     a {
@@ -66,7 +68,7 @@
 
     @media (max-width: 700px) {
         .login-form {
-            min-width: 75vw !important;
+            max-width: 80vw !important;
         }
     }
 

@@ -4,7 +4,7 @@
 	import Login from './pages/login.svelte'
 	import Router from 'page';
 	import Navbar from './pages/components/navbar.svelte'
-	import Header from "./pages/components/header.svelte";
+
 	
 	let page;
 
@@ -16,6 +16,6 @@
 </script>
 
 <Navbar></Navbar>
-<Header />
+
 
 <svelte:component this={page} />
