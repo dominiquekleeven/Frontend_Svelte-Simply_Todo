@@ -1,38 +1,11 @@
-<style>
-.navbar {
-    height: 60px;
-    width: 100%;
-    position:fixed;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 25px;
-    box-sizing: border-box;
-}
 
-.nav-item{
-    font-size: 25px;
-}
-.nav-item:hover{
-    cursor: pointer;
-    color: rgb(155, 37, 102);
-}
-
-button{
-    margin: 0;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-}
-</style>
 
 <script>
     import Icon from 'fa-svelte';
-    import { faList } from '@fortawesome/free-solid-svg-icons/faList'
+    import { faHome } from '@fortawesome/free-solid-svg-icons/faHome'
     import { faSignInAlt } from '@fortawesome/free-solid-svg-icons/faSignInAlt'
     import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons/faSignOutAlt'
-    let list_icon = faList;
+    let home_icon = faHome;
     let login_icon = faSignInAlt;
     let logout_icon = faSignOutAlt;
 
@@ -51,7 +24,7 @@ button{
 </script>
 
 <nav class="navbar">
-    <a href="/" class="nav-item"><Icon icon={list_icon} /></a>
+    <a href="/" class="nav-item"><Icon icon={home_icon} /></a>
 
 
     <span class="acc-buttons">
@@ -66,3 +39,33 @@ button{
         {/if}
     </span>
 </nav>
+
+
+<style>
+    .navbar {
+        height: 60px;
+        width: 100%;
+        position:fixed;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 25px;
+        box-sizing: border-box;
+    }
+    
+    .nav-item{
+        font-size: 25px;
+    }
+    .nav-item:hover{
+        cursor: pointer;
+        color: rgb(155, 37, 102);
+    }
+    
+    button{
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+    }
+    </style>
