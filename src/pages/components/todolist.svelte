@@ -14,7 +14,7 @@
 
     let item_input = {
         visible: false,
-    }
+    };
 
     onMount(async () => {
         console.log(
@@ -25,20 +25,15 @@
         await fetchTodos();
     });
 
+    async function showItemCreate(id) {
+        item_input.visible = !item_input.visible;
 
-    async function showItemCreate(id)
-    {
-        item_input.visible = !item_input.visible
-
-        if (item_input.id === id)
-        {
-            item_input.id = 0
+        if (item_input.id === id) {
+            item_input.id = 0;
         }
 
-            item_input.id = id;
+        item_input.id = id;
     }
-
-
 
     async function deleteTodo(id) {
         const response = await fetch(`${process.env.API_URL}/todos/${id}`, {
@@ -58,14 +53,17 @@
 
     async function createItem(e) {
         e.preventDefault();
-        const response = await fetch(`${process.env.API_URL}/todos/${item_input.id}/items`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: usertoken,
-            },
-            body: JSON.stringify(newitem),
-        });
+        const response = await fetch(
+            `${process.env.API_URL}/todos/${item_input.id}/items`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: usertoken,
+                },
+                body: JSON.stringify(newitem),
+            }
+        );
 
         handleResponseCode(response.status);
         const data = await response.json();
@@ -137,6 +135,15 @@
             document.location.href = "/login";
         }
     }
+
+     function orderItems(items) {
+        var ordered = items.sort(function (a, b) {
+            return a.guide - b.guide;
+        });
+
+        console.log(ordered)
+        return ordered;
+    }
 </script>
 
 <style>
@@ -145,7 +152,6 @@
         flex-direction: row;
         font-size: 16px;
     }
-
 
     .custom-button {
         color: rgb(44, 44, 44);
@@ -269,19 +275,19 @@
     <ul>
         {#each todos as todo}
             <li class="todo">
-
-
-
                 <span class="todo-name">{todo.title}
                     <span class="buttons">
-        
-                            {#if item_input.visible && item_input.id == todo.id}
-                            <button on:click={showItemCreate(todo.id)} class="icon-button">
+                        {#if item_input.visible && item_input.id == todo.id}
+                            <button
+                                on:click={showItemCreate(todo.id)}
+                                class="icon-button">
                                 <Icon icon={faTimesCircle} /></button>
-                            {:else}
-                                <button on:click={showItemCreate(todo.id)} class="icon-button">
-                                    <Icon icon={faPlus} /></button>
-                            {/if}
+                        {:else}
+                            <button
+                                on:click={showItemCreate(todo.id)}
+                                class="icon-button">
+                                <Icon icon={faPlus} /></button>
+                        {/if}
 
                         <button
                             on:click={deleteTodo(todo.id)}
@@ -289,9 +295,6 @@
                             <Icon icon={faTrash} /></button>
                     </span>
                 </span>
-
-
-
 
                 <ul class="todo-item-list">
                     {#if item_input.visible && item_input.id == todo.id}
@@ -302,13 +305,11 @@
                                 bind:value={newitem.name}
                                 placeholder="New item"
                                 type="text" />
-                            <div class="buttons">
-                                <button>Create</button>
-                            </div>
+                            <div class="buttons"><button>Create</button></div>
                         </form>
                     {/if}
 
-                    {#each todo.items as item}
+                    {#each orderItems(todo.items) as item}
                         {#if item.done}
                             <span on:click={updateTodoItem(todo, item)}><Todo
                                     finished="true"
