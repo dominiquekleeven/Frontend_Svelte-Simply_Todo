@@ -2945,7 +2945,7 @@ var app = (function () {
     			div = element("div");
     			t = text(/*error*/ ctx[1]);
     			attr_dev(div, "class", "error svelte-106hra0");
-    			add_location(div, file$7, 122, 12, 2562);
+    			add_location(div, file$7, 122, 12, 2560);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3020,33 +3020,33 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Confirm";
     			attr_dev(h1, "class", "svelte-106hra0");
-    			add_location(h1, file$7, 119, 8, 2508);
+    			add_location(h1, file$7, 119, 8, 2506);
     			attr_dev(label0, "for", "Email");
     			attr_dev(label0, "class", "svelte-106hra0");
-    			add_location(label0, file$7, 126, 8, 2642);
+    			add_location(label0, file$7, 126, 8, 2640);
     			input0.required = true;
     			attr_dev(input0, "type", "email");
     			attr_dev(input0, "placeholder", "example@email.com");
     			attr_dev(input0, "class", "svelte-106hra0");
-    			add_location(input0, file$7, 127, 8, 2691);
+    			add_location(input0, file$7, 127, 8, 2689);
     			attr_dev(label1, "for", "fullname");
     			attr_dev(label1, "class", "svelte-106hra0");
-    			add_location(label1, file$7, 134, 8, 2864);
+    			add_location(label1, file$7, 134, 8, 2861);
     			input1.required = true;
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "class", "svelte-106hra0");
-    			add_location(input1, file$7, 135, 8, 2911);
+    			add_location(input1, file$7, 135, 8, 2908);
     			attr_dev(a, "href", "/signup");
     			attr_dev(a, "class", "svelte-106hra0");
-    			add_location(a, file$7, 139, 12, 3035);
-    			add_location(p, file$7, 137, 8, 2984);
+    			add_location(a, file$7, 139, 12, 3031);
+    			add_location(p, file$7, 137, 8, 2980);
     			attr_dev(button, "type", "submit");
     			attr_dev(button, "class", "svelte-106hra0");
-    			add_location(button, file$7, 142, 8, 3102);
+    			add_location(button, file$7, 142, 8, 3098);
     			attr_dev(form, "class", "login-form svelte-106hra0");
-    			add_location(form, file$7, 118, 4, 2449);
+    			add_location(form, file$7, 118, 4, 2447);
     			attr_dev(main, "class", "svelte-106hra0");
-    			add_location(main, file$7, 117, 0, 2438);
+    			add_location(main, file$7, 117, 0, 2436);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3061,12 +3061,12 @@ var app = (function () {
     			append_dev(form, label0);
     			append_dev(form, t4);
     			append_dev(form, input0);
-    			set_input_value(input0, /*signup*/ ctx[0].email);
+    			set_input_value(input0, /*login*/ ctx[0].email);
     			append_dev(form, t5);
     			append_dev(form, label1);
     			append_dev(form, t7);
     			append_dev(form, input1);
-    			set_input_value(input1, /*signup*/ ctx[0].password);
+    			set_input_value(input1, /*login*/ ctx[0].password);
     			append_dev(form, t8);
     			append_dev(form, p);
     			append_dev(p, t9);
@@ -3098,12 +3098,12 @@ var app = (function () {
     				if_block = null;
     			}
 
-    			if (dirty & /*signup*/ 1 && input0.value !== /*signup*/ ctx[0].email) {
-    				set_input_value(input0, /*signup*/ ctx[0].email);
+    			if (dirty & /*login*/ 1 && input0.value !== /*login*/ ctx[0].email) {
+    				set_input_value(input0, /*login*/ ctx[0].email);
     			}
 
-    			if (dirty & /*signup*/ 1 && input1.value !== /*signup*/ ctx[0].password) {
-    				set_input_value(input1, /*signup*/ ctx[0].password);
+    			if (dirty & /*login*/ 1 && input1.value !== /*login*/ ctx[0].password) {
+    				set_input_value(input1, /*login*/ ctx[0].password);
     			}
     		},
     		i: noop,
@@ -3134,7 +3134,7 @@ var app = (function () {
     function instance$7($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Login", slots, []);
-    	var signup = { email: "", password: "" };
+    	var login = { email: "", password: "" };
     	let error = "";
 
     	async function handleSubmit(e) {
@@ -3147,7 +3147,7 @@ var app = (function () {
     		const response = await fetch(`${{"env":{"isProd":false,"API_URL":"http://localhost:3000/api/v1"}}.env.API_URL}/auth/login`, {
     			method: "POST",
     			headers: { "Content-Type": "application/json" },
-    			body: JSON.stringify(signup)
+    			body: JSON.stringify(login)
     		});
 
     		if (response.status == 401) {
@@ -3171,18 +3171,18 @@ var app = (function () {
     	});
 
     	function input0_input_handler() {
-    		signup.email = this.value;
-    		$$invalidate(0, signup);
+    		login.email = this.value;
+    		$$invalidate(0, login);
     	}
 
     	function input1_input_handler() {
-    		signup.password = this.value;
-    		$$invalidate(0, signup);
+    		login.password = this.value;
+    		$$invalidate(0, login);
     	}
 
     	$$self.$capture_state = () => ({
     		jwt_decode: o,
-    		signup,
+    		login,
     		error,
     		handleSubmit,
     		api_post_login,
@@ -3190,7 +3190,7 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("signup" in $$props) $$invalidate(0, signup = $$props.signup);
+    		if ("login" in $$props) $$invalidate(0, login = $$props.login);
     		if ("error" in $$props) $$invalidate(1, error = $$props.error);
     	};
 
@@ -3198,7 +3198,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [signup, error, handleSubmit, input0_input_handler, input1_input_handler];
+    	return [login, error, handleSubmit, input0_input_handler, input1_input_handler];
     }
 
     class Login extends SvelteComponentDev {

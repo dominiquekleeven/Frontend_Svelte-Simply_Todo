@@ -1,7 +1,7 @@
 <script>
     import jwt_decode from "jwt-decode";
 
-    var signup = {
+    var login = {
         email: "",
         password: "",
     };
@@ -20,7 +20,7 @@
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(signup),
+            body: JSON.stringify(login),
         });
 
         if (response.status == 401) {
@@ -126,14 +126,14 @@
         <!-- E-Mail -->
         <label for="Email">Email Address</label>
         <input
-            bind:value={signup.email}
+            bind:value={login.email}
             required
             type="email"
             placeholder="example@email.com" />
 
         <!-- Password -->
         <label for="fullname">Password</label>
-        <input bind:value={signup.password} required type="password" />
+        <input bind:value={login.password} required type="password" />
 
         <p>
             Don't have an account?
