@@ -90,6 +90,9 @@ var app = (function () {
     function set_input_value(input, value) {
         input.value = value == null ? '' : value;
     }
+    function set_style(node, key, value, important) {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
     function toggle_class(element, name, toggle) {
         element.classList[toggle ? 'add' : 'remove'](name);
     }
@@ -419,7 +422,7 @@ var app = (function () {
 
     const file = "src/pages/components/todo.svelte";
 
-    // (46:0) {:else}
+    // (64:0) {:else}
     function create_else_block(ctx) {
     	let li;
     	let button;
@@ -430,10 +433,10 @@ var app = (function () {
     			li = element("li");
     			button = element("button");
     			t = text(/*description*/ ctx[0]);
-    			attr_dev(button, "class", "item svelte-1tf6j55");
-    			add_location(button, file, 46, 22, 849);
-    			attr_dev(li, "class", "todo-item svelte-1tf6j55");
-    			add_location(li, file, 46, 0, 827);
+    			attr_dev(button, "class", "item svelte-nxmvre");
+    			add_location(button, file, 64, 22, 1237);
+    			attr_dev(li, "class", "todo-item svelte-nxmvre");
+    			add_location(li, file, 64, 0, 1215);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -452,14 +455,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(46:0) {:else}",
+    		source: "(64:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (44:0) {#if finished == 'true'}
+    // (62:0) {#if finished == 'true'}
     function create_if_block(ctx) {
     	let li;
     	let button;
@@ -470,10 +473,10 @@ var app = (function () {
     			li = element("li");
     			button = element("button");
     			t = text(/*description*/ ctx[0]);
-    			attr_dev(button, "class", "todo-done svelte-1tf6j55");
-    			add_location(button, file, 44, 22, 765);
-    			attr_dev(li, "class", "todo-item svelte-1tf6j55");
-    			add_location(li, file, 44, 0, 743);
+    			attr_dev(button, "class", "done svelte-nxmvre");
+    			add_location(button, file, 62, 22, 1158);
+    			attr_dev(li, "class", "todo-item svelte-nxmvre");
+    			add_location(li, file, 62, 0, 1136);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -492,7 +495,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(44:0) {#if finished == 'true'}",
+    		source: "(62:0) {#if finished == 'true'}",
     		ctx
     	});
 
@@ -880,7 +883,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (261:4) {:else}
+    // (277:4) {:else}
     function create_else_block_2(ctx) {
     	let h1;
     	let t1;
@@ -908,22 +911,23 @@ var app = (function () {
     			div = element("div");
     			button = element("button");
     			button.textContent = "Create";
-    			attr_dev(h1, "class", "svelte-7fjpui");
-    			add_location(h1, file$2, 261, 8, 6251);
+    			attr_dev(h1, "class", "svelte-uonabe");
+    			add_location(h1, file$2, 277, 8, 6580);
+    			set_style(label, "font-size", "1.5em");
     			attr_dev(label, "for", "todolist");
-    			attr_dev(label, "class", "svelte-7fjpui");
-    			add_location(label, file$2, 264, 12, 6334);
+    			attr_dev(label, "class", "svelte-uonabe");
+    			add_location(label, file$2, 280, 12, 6663);
     			input.required = true;
     			attr_dev(input, "placeholder", "My project");
     			attr_dev(input, "type", "text");
-    			attr_dev(input, "class", "svelte-7fjpui");
-    			add_location(input, file$2, 265, 12, 6394);
-    			attr_dev(button, "class", "svelte-7fjpui");
-    			add_location(button, file$2, 270, 33, 6574);
-    			attr_dev(div, "class", "buttons svelte-7fjpui");
-    			add_location(div, file$2, 270, 12, 6553);
-    			attr_dev(form, "class", "svelte-7fjpui");
-    			add_location(form, file$2, 263, 8, 6292);
+    			attr_dev(input, "class", "svelte-uonabe");
+    			add_location(input, file$2, 281, 12, 6748);
+    			attr_dev(button, "class", "create-button svelte-uonabe");
+    			add_location(button, file$2, 286, 33, 6928);
+    			attr_dev(div, "class", "buttons svelte-uonabe");
+    			add_location(div, file$2, 286, 12, 6907);
+    			attr_dev(form, "class", "svelte-uonabe");
+    			add_location(form, file$2, 279, 8, 6621);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -964,14 +968,14 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(261:4) {:else}",
+    		source: "(277:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (250:4) {#if todos.length <= 0}
+    // (266:4) {#if todos.length <= 0}
     function create_if_block_3(ctx) {
     	let h1;
     	let t1;
@@ -999,22 +1003,22 @@ var app = (function () {
     			div = element("div");
     			button = element("button");
     			button.textContent = "Create";
-    			attr_dev(h1, "class", "svelte-7fjpui");
-    			add_location(h1, file$2, 250, 8, 5853);
+    			attr_dev(h1, "class", "svelte-uonabe");
+    			add_location(h1, file$2, 266, 8, 6182);
     			attr_dev(label, "for", "todolist");
-    			attr_dev(label, "class", "svelte-7fjpui");
-    			add_location(label, file$2, 252, 12, 5945);
+    			attr_dev(label, "class", "svelte-uonabe");
+    			add_location(label, file$2, 268, 12, 6274);
     			input.required = true;
     			attr_dev(input, "placeholder", "My project");
     			attr_dev(input, "type", "text");
-    			attr_dev(input, "class", "svelte-7fjpui");
-    			add_location(input, file$2, 253, 12, 6005);
-    			attr_dev(button, "class", "svelte-7fjpui");
-    			add_location(button, file$2, 258, 33, 6185);
-    			attr_dev(div, "class", "buttons svelte-7fjpui");
-    			add_location(div, file$2, 258, 12, 6164);
-    			attr_dev(form, "class", "svelte-7fjpui");
-    			add_location(form, file$2, 251, 8, 5903);
+    			attr_dev(input, "class", "svelte-uonabe");
+    			add_location(input, file$2, 269, 12, 6334);
+    			attr_dev(button, "class", "svelte-uonabe");
+    			add_location(button, file$2, 274, 33, 6514);
+    			attr_dev(div, "class", "buttons svelte-uonabe");
+    			add_location(div, file$2, 274, 12, 6493);
+    			attr_dev(form, "class", "svelte-uonabe");
+    			add_location(form, file$2, 267, 8, 6232);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -1055,14 +1059,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(250:4) {#if todos.length <= 0}",
+    		source: "(266:4) {#if todos.length <= 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (285:24) {:else}
+    // (301:24) {:else}
     function create_else_block_1(ctx) {
     	let button;
     	let icon;
@@ -1075,8 +1079,8 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			create_component(icon.$$.fragment);
-    			attr_dev(button, "class", "icon-button svelte-7fjpui");
-    			add_location(button, file$2, 285, 28, 7170);
+    			attr_dev(button, "class", "icon-button svelte-uonabe");
+    			add_location(button, file$2, 301, 28, 7546);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1122,14 +1126,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(285:24) {:else}",
+    		source: "(301:24) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (280:24) {#if item_input.visible && item_input.id == todo.id}
+    // (296:24) {#if item_input.visible && item_input.id == todo.id}
     function create_if_block_2(ctx) {
     	let button;
     	let icon;
@@ -1146,8 +1150,8 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			create_component(icon.$$.fragment);
-    			attr_dev(button, "class", "icon-button svelte-7fjpui");
-    			add_location(button, file$2, 280, 28, 6911);
+    			attr_dev(button, "class", "icon-button svelte-uonabe");
+    			add_location(button, file$2, 296, 28, 7287);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1193,14 +1197,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(280:24) {#if item_input.visible && item_input.id == todo.id}",
+    		source: "(296:24) {#if item_input.visible && item_input.id == todo.id}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (300:20) {#if item_input.visible && item_input.id == todo.id}
+    // (316:20) {#if item_input.visible && item_input.id == todo.id}
     function create_if_block_1(ctx) {
     	let form;
     	let input;
@@ -1218,17 +1222,17 @@ var app = (function () {
     			div = element("div");
     			button = element("button");
     			button.textContent = "Create";
-    			attr_dev(input, "class", "custom-input svelte-7fjpui");
+    			attr_dev(input, "class", "custom-input svelte-uonabe");
     			input.required = true;
     			attr_dev(input, "placeholder", "New item");
     			attr_dev(input, "type", "text");
-    			add_location(input, file$2, 301, 28, 7866);
-    			attr_dev(button, "class", "svelte-7fjpui");
-    			add_location(button, file$2, 307, 49, 8176);
-    			attr_dev(div, "class", "buttons svelte-7fjpui");
-    			add_location(div, file$2, 307, 28, 8155);
-    			attr_dev(form, "class", "custom-form svelte-7fjpui");
-    			add_location(form, file$2, 300, 24, 7788);
+    			add_location(input, file$2, 317, 28, 8242);
+    			attr_dev(button, "class", "svelte-uonabe");
+    			add_location(button, file$2, 323, 49, 8552);
+    			attr_dev(div, "class", "buttons svelte-uonabe");
+    			add_location(div, file$2, 323, 28, 8531);
+    			attr_dev(form, "class", "custom-form svelte-uonabe");
+    			add_location(form, file$2, 316, 24, 8164);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, form, anchor);
@@ -1263,14 +1267,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(300:20) {#if item_input.visible && item_input.id == todo.id}",
+    		source: "(316:20) {#if item_input.visible && item_input.id == todo.id}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (317:24) {:else}
+    // (333:24) {:else}
     function create_else_block$1(ctx) {
     	let span;
     	let todo;
@@ -1290,7 +1294,8 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			create_component(todo.$$.fragment);
-    			add_location(span, file$2, 317, 28, 8624);
+    			attr_dev(span, "class", "item svelte-uonabe");
+    			add_location(span, file$2, 333, 28, 9013);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -1339,14 +1344,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(317:24) {:else}",
+    		source: "(333:24) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (313:24) {#if item.done}
+    // (329:24) {#if item.done}
     function create_if_block$1(ctx) {
     	let span;
     	let todo;
@@ -1366,7 +1371,8 @@ var app = (function () {
     		c: function create() {
     			span = element("span");
     			create_component(todo.$$.fragment);
-    			add_location(span, file$2, 313, 28, 8392);
+    			attr_dev(span, "class", "item svelte-uonabe");
+    			add_location(span, file$2, 329, 28, 8768);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -1415,14 +1421,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(313:24) {#if item.done}",
+    		source: "(329:24) {#if item.done}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (312:20) {#each orderItems(todo.items) as item}
+    // (328:20) {#each orderItems(todo.items) as item}
     function create_each_block_1(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -1493,14 +1499,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(312:20) {#each orderItems(todo.items) as item}",
+    		source: "(328:20) {#each orderItems(todo.items) as item}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (276:8) {#each todos as todo}
+    // (292:8) {#each todos as todo}
     function create_each_block(ctx) {
     	let li;
     	let span1;
@@ -1565,16 +1571,16 @@ var app = (function () {
     			}
 
     			t5 = space();
-    			attr_dev(button, "class", "icon-button svelte-7fjpui");
-    			add_location(button, file$2, 291, 24, 7417);
-    			attr_dev(span0, "class", "buttons svelte-7fjpui");
-    			add_location(span0, file$2, 278, 20, 6783);
-    			attr_dev(span1, "class", "todo-name svelte-7fjpui");
-    			add_location(span1, file$2, 277, 16, 6726);
-    			attr_dev(ul, "class", "todo-item-list svelte-7fjpui");
-    			add_location(ul, file$2, 298, 16, 7663);
-    			attr_dev(li, "class", "todo svelte-7fjpui");
-    			add_location(li, file$2, 276, 12, 6692);
+    			attr_dev(button, "class", "icon-button svelte-uonabe");
+    			add_location(button, file$2, 307, 24, 7793);
+    			attr_dev(span0, "class", "buttons svelte-uonabe");
+    			add_location(span0, file$2, 294, 20, 7159);
+    			attr_dev(span1, "class", "todo-name svelte-uonabe");
+    			add_location(span1, file$2, 293, 16, 7102);
+    			attr_dev(ul, "class", "todo-item-list svelte-uonabe");
+    			add_location(ul, file$2, 314, 16, 8039);
+    			attr_dev(li, "class", "todo svelte-uonabe");
+    			add_location(li, file$2, 292, 12, 7068);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -1718,7 +1724,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(276:8) {#each todos as todo}",
+    		source: "(292:8) {#each todos as todo}",
     		ctx
     	});
 
@@ -1765,12 +1771,12 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(hr, "class", "svelte-7fjpui");
-    			add_location(hr, file$2, 273, 4, 6634);
-    			attr_dev(ul, "class", "svelte-7fjpui");
-    			add_location(ul, file$2, 274, 4, 6645);
-    			attr_dev(div, "class", "todolist svelte-7fjpui");
-    			add_location(div, file$2, 248, 0, 5794);
+    			attr_dev(hr, "class", "svelte-uonabe");
+    			add_location(hr, file$2, 289, 4, 7010);
+    			attr_dev(ul, "class", "svelte-uonabe");
+    			add_location(ul, file$2, 290, 4, 7021);
+    			attr_dev(div, "class", "todolist svelte-uonabe");
+    			add_location(div, file$2, 264, 0, 6123);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2375,14 +2381,14 @@ var app = (function () {
     			t3 = space();
     			p1 = element("p");
     			t4 = text(/*time*/ ctx[0]);
-    			attr_dev(h1, "class", "svelte-4qby7");
-    			add_location(h1, file$4, 51, 4, 900);
-    			attr_dev(p0, "class", "subtitle svelte-4qby7");
-    			add_location(p0, file$4, 52, 4, 925);
-    			attr_dev(p1, "class", "time svelte-4qby7");
-    			add_location(p1, file$4, 53, 4, 969);
-    			attr_dev(div, "class", "header svelte-4qby7");
-    			add_location(div, file$4, 50, 0, 875);
+    			attr_dev(h1, "class", "svelte-wfnr1o");
+    			add_location(h1, file$4, 51, 4, 906);
+    			attr_dev(p0, "class", "subtitle svelte-wfnr1o");
+    			add_location(p0, file$4, 52, 4, 931);
+    			attr_dev(p1, "class", "time svelte-wfnr1o");
+    			add_location(p1, file$4, 53, 4, 975);
+    			attr_dev(div, "class", "header svelte-wfnr1o");
+    			add_location(div, file$4, 50, 0, 881);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2474,32 +2480,17 @@ var app = (function () {
     function create_fragment$5(ctx) {
     	let main;
     	let header;
-    	let t0;
-    	let audioplayer;
-    	let t1;
+    	let t;
     	let todolist;
     	let current;
     	header = new Header({ $$inline: true });
-
-    	audioplayer = new Audioplayer({
-    			props: {
-    				src: "https://sveltejs.github.io/assets/music/satie.mp3",
-    				title: "Gymnopédie no. 1",
-    				composer: "Erik Satie",
-    				performer: "Prodigal Procrastinator"
-    			},
-    			$$inline: true
-    		});
-
     	todolist = new Todolist({ $$inline: true });
 
     	const block = {
     		c: function create() {
     			main = element("main");
     			create_component(header.$$.fragment);
-    			t0 = space();
-    			create_component(audioplayer.$$.fragment);
-    			t1 = space();
+    			t = space();
     			create_component(todolist.$$.fragment);
     			attr_dev(main, "class", "svelte-1d2f1at");
     			add_location(main, file$5, 14, 0, 322);
@@ -2510,9 +2501,7 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
     			mount_component(header, main, null);
-    			append_dev(main, t0);
-    			mount_component(audioplayer, main, null);
-    			append_dev(main, t1);
+    			append_dev(main, t);
     			mount_component(todolist, main, null);
     			current = true;
     		},
@@ -2520,20 +2509,17 @@ var app = (function () {
     		i: function intro(local) {
     			if (current) return;
     			transition_in(header.$$.fragment, local);
-    			transition_in(audioplayer.$$.fragment, local);
     			transition_in(todolist.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(header.$$.fragment, local);
-    			transition_out(audioplayer.$$.fragment, local);
     			transition_out(todolist.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
     			destroy_component(header);
-    			destroy_component(audioplayer);
     			destroy_component(todolist);
     		}
     	};
@@ -2583,7 +2569,7 @@ var app = (function () {
     const { console: console_1$1 } = globals;
     const file$6 = "src/pages/signup.svelte";
 
-    // (126:8) {#if error != ''}
+    // (129:8) {#if error != ''}
     function create_if_block$2(ctx) {
     	let div;
     	let t;
@@ -2592,8 +2578,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(/*error*/ ctx[1]);
-    			attr_dev(div, "class", "error svelte-1fi1axr");
-    			add_location(div, file$6, 126, 12, 2692);
+    			attr_dev(div, "class", "error svelte-rf06w4");
+    			add_location(div, file$6, 129, 12, 2812);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2611,7 +2597,7 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(126:8) {#if error != ''}",
+    		source: "(129:8) {#if error != ''}",
     		ctx
     	});
 
@@ -2685,49 +2671,49 @@ var app = (function () {
     			t17 = space();
     			button = element("button");
     			button.textContent = "Confirm";
-    			attr_dev(h1, "class", "svelte-1fi1axr");
-    			add_location(h1, file$6, 123, 8, 2636);
+    			attr_dev(h1, "class", "svelte-rf06w4");
+    			add_location(h1, file$6, 126, 8, 2756);
     			attr_dev(label0, "for", "Fullname");
-    			attr_dev(label0, "class", "svelte-1fi1axr");
-    			add_location(label0, file$6, 130, 8, 2770);
+    			attr_dev(label0, "class", "svelte-rf06w4");
+    			add_location(label0, file$6, 133, 8, 2890);
     			input0.required = true;
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "John Doe");
-    			attr_dev(input0, "class", "svelte-1fi1axr");
-    			add_location(input0, file$6, 131, 8, 2818);
+    			attr_dev(input0, "class", "svelte-rf06w4");
+    			add_location(input0, file$6, 134, 8, 2938);
     			attr_dev(label1, "for", "Email");
-    			attr_dev(label1, "class", "svelte-1fi1axr");
-    			add_location(label1, file$6, 138, 8, 2978);
+    			attr_dev(label1, "class", "svelte-rf06w4");
+    			add_location(label1, file$6, 141, 8, 3098);
     			input1.required = true;
     			attr_dev(input1, "type", "email");
     			attr_dev(input1, "placeholder", "example@email.com");
-    			attr_dev(input1, "class", "svelte-1fi1axr");
-    			add_location(input1, file$6, 139, 8, 3027);
+    			attr_dev(input1, "class", "svelte-rf06w4");
+    			add_location(input1, file$6, 142, 8, 3147);
     			attr_dev(label2, "for", "fullname");
-    			attr_dev(label2, "class", "svelte-1fi1axr");
-    			add_location(label2, file$6, 146, 8, 3200);
+    			attr_dev(label2, "class", "svelte-rf06w4");
+    			add_location(label2, file$6, 149, 8, 3320);
     			input2.required = true;
     			attr_dev(input2, "type", "password");
-    			attr_dev(input2, "class", "svelte-1fi1axr");
-    			add_location(input2, file$6, 147, 8, 3247);
+    			attr_dev(input2, "class", "svelte-rf06w4");
+    			add_location(input2, file$6, 150, 8, 3367);
     			attr_dev(label3, "for", "fullname");
-    			attr_dev(label3, "class", "svelte-1fi1axr");
-    			add_location(label3, file$6, 150, 8, 3354);
+    			attr_dev(label3, "class", "svelte-rf06w4");
+    			add_location(label3, file$6, 153, 8, 3474);
     			input3.required = true;
     			attr_dev(input3, "type", "password");
-    			attr_dev(input3, "class", "svelte-1fi1axr");
-    			add_location(input3, file$6, 151, 8, 3409);
+    			attr_dev(input3, "class", "svelte-rf06w4");
+    			add_location(input3, file$6, 154, 8, 3529);
     			attr_dev(a, "href", "/login");
-    			attr_dev(a, "class", "svelte-1fi1axr");
-    			add_location(a, file$6, 158, 12, 3584);
-    			add_location(p, file$6, 156, 8, 3531);
+    			attr_dev(a, "class", "svelte-rf06w4");
+    			add_location(a, file$6, 161, 12, 3704);
+    			add_location(p, file$6, 159, 8, 3651);
     			attr_dev(button, "type", "submit");
-    			attr_dev(button, "class", "svelte-1fi1axr");
-    			add_location(button, file$6, 161, 8, 3648);
-    			attr_dev(form, "class", "login-form svelte-1fi1axr");
-    			add_location(form, file$6, 122, 4, 2577);
-    			attr_dev(main, "class", "signup svelte-1fi1axr");
-    			add_location(main, file$6, 121, 0, 2551);
+    			attr_dev(button, "class", "svelte-rf06w4");
+    			add_location(button, file$6, 164, 8, 3768);
+    			attr_dev(form, "class", "login-form svelte-rf06w4");
+    			add_location(form, file$6, 125, 4, 2697);
+    			attr_dev(main, "class", "signup svelte-rf06w4");
+    			add_location(main, file$6, 124, 0, 2671);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2949,7 +2935,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$7 = "src/pages/login.svelte";
 
-    // (120:8) {#if error != ''}
+    // (122:8) {#if error != ''}
     function create_if_block$3(ctx) {
     	let div;
     	let t;
@@ -2958,8 +2944,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(/*error*/ ctx[1]);
-    			attr_dev(div, "class", "error svelte-19wvk1e");
-    			add_location(div, file$7, 120, 12, 2474);
+    			attr_dev(div, "class", "error svelte-106hra0");
+    			add_location(div, file$7, 122, 12, 2562);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2977,7 +2963,7 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(120:8) {#if error != ''}",
+    		source: "(122:8) {#if error != ''}",
     		ctx
     	});
 
@@ -3033,34 +3019,34 @@ var app = (function () {
     			t11 = space();
     			button = element("button");
     			button.textContent = "Confirm";
-    			attr_dev(h1, "class", "svelte-19wvk1e");
-    			add_location(h1, file$7, 117, 8, 2420);
+    			attr_dev(h1, "class", "svelte-106hra0");
+    			add_location(h1, file$7, 119, 8, 2508);
     			attr_dev(label0, "for", "Email");
-    			attr_dev(label0, "class", "svelte-19wvk1e");
-    			add_location(label0, file$7, 124, 8, 2554);
+    			attr_dev(label0, "class", "svelte-106hra0");
+    			add_location(label0, file$7, 126, 8, 2642);
     			input0.required = true;
     			attr_dev(input0, "type", "email");
     			attr_dev(input0, "placeholder", "example@email.com");
-    			attr_dev(input0, "class", "svelte-19wvk1e");
-    			add_location(input0, file$7, 125, 8, 2603);
+    			attr_dev(input0, "class", "svelte-106hra0");
+    			add_location(input0, file$7, 127, 8, 2691);
     			attr_dev(label1, "for", "fullname");
-    			attr_dev(label1, "class", "svelte-19wvk1e");
-    			add_location(label1, file$7, 132, 8, 2776);
+    			attr_dev(label1, "class", "svelte-106hra0");
+    			add_location(label1, file$7, 134, 8, 2864);
     			input1.required = true;
     			attr_dev(input1, "type", "password");
-    			attr_dev(input1, "class", "svelte-19wvk1e");
-    			add_location(input1, file$7, 133, 8, 2823);
+    			attr_dev(input1, "class", "svelte-106hra0");
+    			add_location(input1, file$7, 135, 8, 2911);
     			attr_dev(a, "href", "/signup");
-    			attr_dev(a, "class", "svelte-19wvk1e");
-    			add_location(a, file$7, 137, 12, 2947);
-    			add_location(p, file$7, 135, 8, 2896);
+    			attr_dev(a, "class", "svelte-106hra0");
+    			add_location(a, file$7, 139, 12, 3035);
+    			add_location(p, file$7, 137, 8, 2984);
     			attr_dev(button, "type", "submit");
-    			attr_dev(button, "class", "svelte-19wvk1e");
-    			add_location(button, file$7, 140, 8, 3014);
-    			attr_dev(form, "class", "login-form svelte-19wvk1e");
-    			add_location(form, file$7, 116, 4, 2361);
-    			attr_dev(main, "class", "svelte-19wvk1e");
-    			add_location(main, file$7, 115, 0, 2350);
+    			attr_dev(button, "class", "svelte-106hra0");
+    			add_location(button, file$7, 142, 8, 3102);
+    			attr_dev(form, "class", "login-form svelte-106hra0");
+    			add_location(form, file$7, 118, 4, 2449);
+    			attr_dev(main, "class", "svelte-106hra0");
+    			add_location(main, file$7, 117, 0, 2438);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4551,7 +4537,7 @@ var app = (function () {
 
     // (35:8) {:else}
     function create_else_block$2(ctx) {
-    	let a;
+    	let button;
     	let icon;
     	let current;
 
@@ -4562,15 +4548,15 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			a = element("a");
+    			button = element("button");
     			create_component(icon.$$.fragment);
-    			attr_dev(a, "href", "/login");
-    			attr_dev(a, "class", "nav-item svelte-nic69o");
-    			add_location(a, file$8, 35, 8, 875);
+    			attr_dev(button, "href", "/login");
+    			attr_dev(button, "class", "nav-item svelte-1gw52fy");
+    			add_location(button, file$8, 35, 8, 885);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, a, anchor);
-    			mount_component(icon, a, null);
+    			insert_dev(target, button, anchor);
+    			mount_component(icon, button, null);
     			current = true;
     		},
     		p: noop,
@@ -4584,7 +4570,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(a);
+    			if (detaching) detach_dev(button);
     			destroy_component(icon);
     		}
     	};
@@ -4617,8 +4603,8 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			create_component(icon.$$.fragment);
-    			attr_dev(button, "class", "nav-item svelte-nic69o");
-    			add_location(button, file$8, 31, 8, 744);
+    			attr_dev(button, "class", "nav-item svelte-1gw52fy");
+    			add_location(button, file$8, 31, 8, 754);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -4661,7 +4647,7 @@ var app = (function () {
 
     function create_fragment$8(ctx) {
     	let nav;
-    	let a;
+    	let button;
     	let icon;
     	let t;
     	let span;
@@ -4688,17 +4674,17 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			nav = element("nav");
-    			a = element("a");
+    			button = element("button");
     			create_component(icon.$$.fragment);
     			t = space();
     			span = element("span");
     			if_block.c();
-    			attr_dev(a, "href", "/");
-    			attr_dev(a, "class", "nav-item svelte-nic69o");
-    			add_location(a, file$8, 26, 4, 617);
+    			attr_dev(button, "href", "/");
+    			attr_dev(button, "class", "nav-item svelte-1gw52fy");
+    			add_location(button, file$8, 26, 4, 617);
     			attr_dev(span, "class", "acc-buttons");
-    			add_location(span, file$8, 29, 4, 682);
-    			attr_dev(nav, "class", "navbar svelte-nic69o");
+    			add_location(span, file$8, 29, 4, 692);
+    			attr_dev(nav, "class", "navbar svelte-1gw52fy");
     			add_location(nav, file$8, 25, 0, 592);
     		},
     		l: function claim(nodes) {
@@ -4706,8 +4692,8 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, nav, anchor);
-    			append_dev(nav, a);
-    			mount_component(icon, a, null);
+    			append_dev(nav, button);
+    			mount_component(icon, button, null);
     			append_dev(nav, t);
     			append_dev(nav, span);
     			if_blocks[current_block_type_index].m(span, null);

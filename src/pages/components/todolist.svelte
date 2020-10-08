@@ -154,7 +154,6 @@
     }
 
     .custom-button {
-        color: rgb(44, 44, 44);
     }
 
     form {
@@ -186,11 +185,12 @@
     }
     h1 {
         font-weight: 300;
+        font-size: 2.5em;
         margin-bottom: 0px;
         text-align: center;
     }
     button {
-        color: rgb(155, 37, 102);
+        color:  rgb(241, 174, 86);
         background-color: transparent;
         border: none;
     }
@@ -204,12 +204,12 @@
 
     .todo-item-list {
         margin-left: 25px;
-        display: flex;
+        display: inline-flex;
         flex-direction: column;
     }
 
     .todo-name {
-        color: rgb(155, 37, 102);
+        color:  rgb(241, 174, 86);
         font-weight: 300;
         line-height: 2;
         display: flex;
@@ -217,17 +217,33 @@
     }
 
     .icon-button {
-        font-size: 18px !important;
-        color: rgb(44, 44, 44);
+        font-size: 20px !important;
+        color: rgb(245, 245, 245);
+        background-color: rgba(0, 0, 0, 0.671);
+        padding: 10px;
+        height: 40px;
+        width: 40px;
+        margin-right: 10px;
+        border-radius: 0.5em;
+        
+    }
+
+    .create-button {
+        text-shadow: 1px 1px #252525;
+        font-size: 24px;
     }
 
     .icon-button:hover {
         cursor: pointer;
-        color: rgb(155, 37, 102);
+        color:  rgb(241, 174, 86);
     }
 
     label {
         margin-top: 15px;
+    }
+
+    .item {
+        display: inline-flex;
     }
 
     input {
@@ -236,7 +252,7 @@
     }
 
     input:focus {
-        outline-color: rgb(155, 37, 102);
+        outline-color:  rgb(241, 174, 86);
     }
 
     .buttons {
@@ -262,13 +278,13 @@
         <h1>Todo List Collection ✔</h1>
 
         <form on:submit={createTodo}>
-            <label for="todolist">Create a new list</label>
+            <label style="font-size: 1.5em" for="todolist">Create a new list</label>
             <input
                 required
                 bind:value={newlist.title}
                 placeholder="My project"
                 type="text" />
-            <div class="buttons"><button>Create</button></div>
+            <div class="buttons"><button class="create-button">Create</button></div>
         </form>
     {/if}
     <hr />
@@ -311,11 +327,11 @@
 
                     {#each orderItems(todo.items) as item}
                         {#if item.done}
-                            <span on:click={updateTodoItem(todo, item)}><Todo
+                            <span class="item" on:click={updateTodoItem(todo, item)}><Todo
                                     finished="true"
                                     description={item.name} /></span>
                         {:else}
-                            <span on:click={updateTodoItem(todo, item)}><Todo
+                            <span class="item" on:click={updateTodoItem(todo, item)}><Todo
                                     finished="false"
                                     description={item.name} /></span>
                         {/if}

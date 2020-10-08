@@ -52,7 +52,7 @@
     }
 
     a {
-        color: rgb(155, 37, 102);
+        color: rgb(241, 174, 86);
     }
     a:hover {
         text-decoration: underline;
@@ -74,10 +74,11 @@
 
     .login-form {
         display: inline-flex;
-        min-width: 25vw;
+        min-width: 20vw;
+        background-color: rgba(31, 31, 31, 0.89);
         /* border: 1px solid rgb(155, 37, 102); */
         flex-direction: column;
-        border-radius: 0.25em;
+        border-radius: 0.35em;
         padding: 25px;
         box-shadow: 0px 3px 4px 2px rgba(0, 0, 0, 0.308);
     }
@@ -98,17 +99,18 @@
     }
 
     input:focus {
-        outline-color: rgb(155, 37, 102);
+        outline-color: rgb(241, 174, 86);
     }
 
     button {
         margin-top: 25px;
         border-width: 2px;
+        text-shadow: none !important;
     }
 
     button:hover {
         cursor: pointer;
-        border: 2px solid rgb(155, 37, 102);
+        border: 2px solid rgb(241, 174, 86);
         border-radius: 0.25em;
     }
 </style>

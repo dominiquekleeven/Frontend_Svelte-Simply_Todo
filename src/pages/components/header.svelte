@@ -29,7 +29,7 @@
     }
 
     h1 {
-        color: rgb(155, 37, 102);
+        color:  rgb(241, 174, 86);
         text-transform: uppercase;
         font-size: 4em;
         font-weight: 300;
@@ -37,7 +37,7 @@
     }
 
     .subtitle {
-        color: rgb(56, 56, 56);
+        color:   rgb(238, 238, 238);
         font-size: 1.5em;
         font-style: italic;
         margin-top: 0;

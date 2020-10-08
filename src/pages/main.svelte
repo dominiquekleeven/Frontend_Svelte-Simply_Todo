@@ -15,12 +15,12 @@
 <main>
     <Header />
 
-    <AudioPlayer
+    <!-- <AudioPlayer
 	src="https://sveltejs.github.io/assets/music/satie.mp3"
 	title="Gymnopédie no. 1"
 	composer="Erik Satie"
 	performer="Prodigal Procrastinator"
-/>
+/> -->
 
     <Todolist></Todolist>
 </main>

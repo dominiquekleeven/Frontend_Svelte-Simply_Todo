@@ -24,7 +24,7 @@
 </script>
 
 <nav class="navbar">
-    <a href="/" class="nav-item"><Icon icon={home_icon} /></a>
+    <button href="/" class="nav-item"><Icon icon={home_icon} /></button>
 
 
     <span class="acc-buttons">
@@ -33,9 +33,9 @@
             <Icon icon={logout_icon}></Icon>
         </button>
         {:else}
-        <a href="/login" class="nav-item">
+        <button href="/login" class="nav-item">
             <Icon icon={login_icon}></Icon>
-         </a>
+         </button>
         {/if}
     </span>
 </nav>
@@ -56,15 +56,26 @@
     
     .nav-item{
         font-size: 25px;
+        color: white;
+        border-radius: 0.5em;
+        background-color: rgba(0, 0, 0, 0.719);
+        padding: 10px;
+
+
     }
     .nav-item:hover{
         cursor: pointer;
-        color: rgb(155, 37, 102);
+        color: rgb(241, 174, 86);
     }
     
     button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin: 0;
         padding: 0;
+        height: 50px;
+        width: 50px;
         background-color: transparent;
         border: none;
     }
