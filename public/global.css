@@ -4,12 +4,25 @@ html, body {
 	height: 100%;
 }
 
+
+.bg-image {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	background-image: url(./bg.jpg) !important;
+	background-repeat: no-repeat;
+	filter: blur(8px);
+	-webkit-filter: blur(8px);
+}
+
 body {
 	color: rgb(255, 255, 255);
 	margin: 0;
 	box-sizing: border-box;
-	background-image: url(./bg.jpg);
-	background-repeat: no-repeat;
+	
+
+
 	text-shadow: 1px 1px #252525;
 	background-color:  rgb(41 53 53);
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;

@@ -10,7 +10,7 @@
 
     async function handleSubmit(e) {
         e.preventDefault();
-        console.log(signup);
+        console.log(login);
         api_post_login();
     }
 
